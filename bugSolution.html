@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+<style>
+  #myDiv {
+    background-color: lightblue;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Correct way to access a CSS property.
+    var divStyle = window.getComputedStyle(document.getElementById("myDiv")).backgroundColor;
+    console.log(divStyle); // Output: rgb(173, 216, 230)
+
+    // Correct way to set content without unexpected spaces.
+    document.getElementById('myDiv').textContent = 'This text has no extra spaces.';
+  </script>
+</body>
+</html>
