@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Incorrect way to access a CSS property using the wrong syntax.
+    var divStyle = document.getElementById("myDiv").style.background-color;
+    console.log(divStyle);
+
+    // Correct way to access a CSS property.
+    var divStyle2 = window.getComputedStyle(document.getElementById("myDiv")).backgroundColor;
+    console.log(divStyle2);
+
+    //Another uncommon bug. Using innerText instead of textContent
+    document.getElementById('myDiv').innerText = 'this will add extra spaces';
+  </script>
+</body>
+</html>
